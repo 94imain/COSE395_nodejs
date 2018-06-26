@@ -16,6 +16,8 @@ app.get('/temperature', function(req, res) {
     var temperature = readout.temperature.toFixed(1);
 
     var time = new Date();
+    time.setHours(time.getHours()+9);
+    //for GMT time consideration
 
     res.json({time : time, tem : temperature});
 });
